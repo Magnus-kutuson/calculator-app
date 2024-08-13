@@ -3,11 +3,10 @@
         <div class="min-container2">
             <h3 style="color:  hsl(0, 0%, 100%);padding-left: 2.3rem;">calc</h3>  
         </div>
-        <div class="min-container1">{{ displayValue }}
-            <input type="text">
+        <div class="min-container1">
+            <div class="display">{{ displayValue }}</div>
+            <!-- <input type="text"> -->
         </div>
-        <div class="grid">
-            <!-- <div class="display"></div> -->
             <div class="numbers">
                 <button (click)="appendNumber('7')">7</button>
                 <button (click)="appendNumber('8')">8</button>
@@ -29,9 +28,6 @@
                 <button class="Reset2"  (click)="calculateResult()">=</button>
             </div> 
         </div>
-       
-
-    </div>
    
 </div>
 
