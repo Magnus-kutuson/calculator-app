@@ -1,0 +1,36 @@
+input[type="text"]{
+    border-radius: 5px;
+    width: 80%;
+    height: 10vh;
+    border: none;
+    background-color:   hsl(224, 36%, 15%);
+    color: white;
+    font-size: x-large;
+    font-weight: 700;
+}
+.container{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.sub-container{
+    width: 30%;
+    height: 70vh;
+    /* border: 1px solid red; */
+    margin-top: 5rem;
+    
+}
+.min-container1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* .min-container2{
+
+} */
+ .numbers{
+    padding-top: 1rem;
+    width: 30%;
+    height: 30vh;
+    /* background-color: hsl(223, 31%, 20%); */
+ }
