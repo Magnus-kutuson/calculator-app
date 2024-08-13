@@ -4,18 +4,3 @@
     background-color: hsl(222, 26%, 31%);
     font-family: League Spartan;
 }
-body.theme-1 {
-    background-color: #f0f0f0;
-    color: #000;
-  }
-  
-  body.theme-2 {
-    background-color: #dcdcdc;
-    color: #333;
-  }
-  
-  body.theme-3 {
-    background-color: #bfbfbf;
-    color: #666;
-  }
-  
