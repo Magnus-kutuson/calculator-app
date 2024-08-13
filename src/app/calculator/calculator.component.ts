@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./calculator.component.css'],
   standalone: true,
 })
-export class CalculatorComponent {
+export class CalculatorComponent{
   displayValue: string = '';
   currentOperation: string = '';
   operand1: number | null = null;
@@ -20,6 +20,10 @@ export class CalculatorComponent {
     } else {
       this.displayValue = this.displayValue === '0' ? number : this.displayValue + number;
     }
+  }
+
+  onDelete(): void {
+    this.displayValue = this.displayValue.slice(0, -1); // Remove the last character
   }
 
   appendDecimal(): void {
@@ -73,3 +77,4 @@ export class CalculatorComponent {
     this.waitingForSecondOperand = false;
   }
 }
+ 

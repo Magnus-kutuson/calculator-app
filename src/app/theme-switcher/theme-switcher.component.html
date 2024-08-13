@@ -1,0 +1,16 @@
+<div class="theme-switcher">
+    <div class="label">{{ selectedTheme }}</div>
+    <div class="slider">
+      <label *ngFor="let theme of themes">
+        <input
+          type="radio"
+          name="theme"
+          [value]="theme"
+          [(ngModel)]="selectedTheme"
+          (change)="onThemeChange(theme)"
+        />
+        {{ theme }}
+      </label>
+    </div>
+  </div>
+  
