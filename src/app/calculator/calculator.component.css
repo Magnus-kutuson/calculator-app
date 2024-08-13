@@ -35,19 +35,35 @@ input[type="text"]{
     background-color:hsl(224, 36%, 15%);
     margin-left: 2.5rem;
     border-radius: 5px;
+    /* gap: 10px 10px; */
+    padding-top: 0.5rem;
  }
  button{
+    
     background-color: white;
-    width: 5rem;
+    width: 4rem;
     height: 3rem;
-    /* border: none; */
+    border: none;
     border-radius: 8px;
     padding: 0 5px;
     font-weight: 700;
     font-size: x-large;
     cursor: pointer;
+    margin:6px 8px;
  }
- .Reset{
-    width: 6rem;
+ .Reset1{
+    width: 45%;
     /* height: 3rem; */
+    color: white;
+    background-color:  hsl(224, 28%, 35%);
  }
+ .Reset2{
+    width: 45%;
+    /* height: 3rem; */
+    color: white;
+    background-color: orangered;
+ }
+ /* .grid{
+     display: flex;
+     gap: 20px 20px;
+ } */
