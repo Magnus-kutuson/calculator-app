@@ -2,11 +2,74 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-calculator',
-  standalone: true,
-  imports: [],
   templateUrl: './calculator.component.html',
-  styleUrl: './calculator.component.css'
+  styleUrls: ['./calculator.component.css'],
+  standalone: true,
 })
 export class CalculatorComponent {
+  displayValue: string = '';
+  currentOperation: string = '';
+  operand1: number | null = null;
+  operand2: number | null = null;
+  waitingForSecondOperand: boolean = false;
 
+  appendNumber(number: string): void {
+    if (this.waitingForSecondOperand) {
+      this.displayValue = number;
+      this.waitingForSecondOperand = false;
+    } else {
+      this.displayValue = this.displayValue === '0' ? number : this.displayValue + number;
+    }
+  }
+
+  appendDecimal(): void {
+    if (!this.displayValue.includes('.')) {
+      this.displayValue += '.';
+    }
+  }
+
+  setOperation(operation: string): void {
+    if (this.operand1 === null) {
+      this.operand1 = parseFloat(this.displayValue);
+    } else if (this.currentOperation) {
+      const result = this.calculate(this.operand1, parseFloat(this.displayValue), this.currentOperation);
+      this.displayValue = String(result);
+      this.operand1 = result;
+    }
+    this.currentOperation = operation;
+    this.waitingForSecondOperand = true;
+  }
+
+  calculateResult(): void {
+    if (this.currentOperation && this.operand1 !== null) {
+      const result = this.calculate(this.operand1, parseFloat(this.displayValue), this.currentOperation);
+      this.displayValue = String(result);
+      this.currentOperation = '';
+      this.operand1 = null;
+      this.waitingForSecondOperand = false;
+    }
+  }
+
+  calculate(operand1: number, operand2: number, operation: string): number {
+    switch (operation) {
+      case '+':
+        return operand1 + operand2;
+      case '-':
+        return operand1 - operand2;
+      case '*':
+        return operand1 * operand2;
+      case '/':
+        return operand1 / operand2;
+      default:
+        return operand2;
+    }
+  }
+
+  clear(): void {
+    this.displayValue = '';
+    this.currentOperation = '';
+    this.operand1 = null;
+    this.operand2 = null;
+    this.waitingForSecondOperand = false;
+  }
 }

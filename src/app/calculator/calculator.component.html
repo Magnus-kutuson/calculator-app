@@ -2,36 +2,44 @@
     <div class="sub-container">
         <div class="min-container2">
             <h3 style="color:  hsl(0, 0%, 100%);padding-left: 2.3rem;">calc</h3>
-            <!-- <button></button> -->
+            <!-- <div class="theme-switcher">  
+                <label for="theme">Theme:</label>  
+                <select id="theme" onchange="changeTheme()">  
+                    <option value="theme1">1</option>  
+                    <option value="theme2">2</option>  
+                    <option value="theme3">3</option>  
+                </select>   -->
+            </div> 
         </div>
-        <div class="min-container1">
+        <div class="min-container1">{{ displayValue }}
             <input type="text">
         </div>
         <div class="grid">
+            <!-- <div class="display"></div> -->
             <div class="numbers">
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-                <button style="color: white; background-color: hsl(224, 28%, 35%);">DEL</button>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
+                <button (click)="appendNumber('7')">7</button>
+                <button (click)="appendNumber('8')">8</button>
+                <button (click)="appendNumber('9')">9</button>
+                <button style="color: white; background-color: hsl(224, 28%, 35%);" (click)="appendNumber('7')">DEL</button>
+                <button (click)="appendNumber('4')">4</button>
+                <button (click)="appendNumber('5')">5</button>
+                <button (click)="appendNumber('6')">6</button>
                 <button>+</button>
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>-</button>
-                <button>.</button>
-                <button>0</button>
-                <button>/</button>
-                <button>x</button>
-                <button class="Reset1">Reset</button>
-                <button class="Reset2">=</button>
+                <button (click)="appendNumber('1')">1</button>
+                <button (click)="appendNumber('2')">2</button>
+                <button (click)="appendNumber('3')">3</button>
+                <button (click)="setOperation('-')">-</button>
+                <button (click)="appendDecimal()">.</button>
+                <button  (click)="appendNumber('0')">0</button>
+                <button (click)="setOperation('/')">/</button>
+                <button (click)="setOperation('*')">x</button>
+                <button class="Reset1" (click)="clear()">Reset</button>
+                <button class="Reset2"  (click)="calculateResult()">=</button>
             </div> 
         </div>
        
 
     </div>
    
-</div>
+<!-- </div> -->
 
