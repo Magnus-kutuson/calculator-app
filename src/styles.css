@@ -4,3 +4,21 @@
     background-color: hsl(222, 26%, 31%);
     font-family: League Spartan;
 }
+/* Default Light Theme */
+:root {
+    --background-color: white;
+    --text-color: black;
+  }
+  
+  
+  /* Dark Theme */
+  .dark-theme {
+    --background-color:  hsl(268, 75%, 9%);
+    --text-color: hsl(52, 100%, 62%);
+  }
+  
+  /* .light-theme {
+    --background-color: white;
+    --text-color: black;
+  } */
+  

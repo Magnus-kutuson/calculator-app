@@ -26,9 +26,11 @@
     align-items: center;
     justify-content: center;
 }
-/* .min-container2{
-
-} */
+.min-container2{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
  .numbers{
     margin-top: 1rem;
     width: 80%;
@@ -75,5 +77,68 @@
     font-weight: 700;
     text-align: right;
 }
-  
-   
+
+/* Switcher */
+
+/* Basic switcher container */
+.switch {
+   position: relative;
+   display: inline-block;
+   width: 60px;
+   height: 34px;
+   margin-right: 2.5rem;
+ }
+ 
+ /* Hide the default checkbox input */
+ .switch input {
+   opacity: 0;
+   width: 0;
+   height: 0;
+ }
+ 
+ /* Create the slider background */
+ .slider {
+   position: absolute;
+   cursor: pointer;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: #ccc;
+   transition: 0.4s;
+   border-radius: 34px;
+ }
+ 
+ /* The circle inside the switch */
+ .slider:before {
+   position: absolute;
+   content: "";
+   height: 26px;
+   width: 26px;
+   left: 4px;
+   bottom: 4px;
+   background-color: white;
+   transition: 0.4s;
+   border-radius: 50%;
+ }
+ 
+ /* When the checkbox is checked, change the background */
+ input:checked + .slider {
+   background-color:  #ccc;
+ }
+ 
+ /* Move the circle to the right when the switch is ON */
+ input:checked + .slider:before {
+   transform: translateX(26px);
+ }
+ 
+ /* Optional: Add shadows to make it look more realistic */
+ .slider {
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+ }
+ 
+/* Darkmode */
+.dark-theme .container{
+   --background-color:  hsl(268, 75%, 9%);
+   --text-color: hsl(52, 100%, 62%);
+ }

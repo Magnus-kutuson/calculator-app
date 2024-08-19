@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ThemeService } from '../theme.service';
 
 @Component({
   selector: 'app-calculator',
@@ -6,12 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./calculator.component.css'],
   standalone: true,
 })
-export class CalculatorComponent{
+export class CalculatorComponent {
   displayValue: string = '';
   currentOperation: string = '';
   operand1: number | null = null;
   operand2: number | null = null;
   waitingForSecondOperand: boolean = false;
+
+  constructor(private themeService: ThemeService) {}
 
   appendNumber(number: string): void {
     if (this.waitingForSecondOperand) {
@@ -76,5 +79,12 @@ export class CalculatorComponent{
     this.operand2 = null;
     this.waitingForSecondOperand = false;
   }
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
+  }
+
+  get isDarkThemeActive(): boolean {
+    return this.themeService.isDarkThemeActive;
+  }
 }
- 

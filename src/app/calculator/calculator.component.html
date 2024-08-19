@@ -1,7 +1,11 @@
 <div class="container">
     <div class="sub-container">
         <div class="min-container2">
-            <h3 style="color:  hsl(0, 0%, 100%);padding-left: 2.3rem;">calc</h3>  
+            <h3 style="color:  hsl(0, 0%, 100%);padding-left: 2.3rem;">calc</h3> 
+            <label class="switch">
+                <input type="checkbox" (change)="toggleTheme()" [checked]="isDarkThemeActive">
+                <span class="slider"></span>
+              </label>
         </div>
         <div class="min-container1">
             <div class="display">{{ displayValue }}</div>
